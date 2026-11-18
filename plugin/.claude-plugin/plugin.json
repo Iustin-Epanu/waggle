@@ -2,5 +2,19 @@
   "name": "waggle",
   "version": "0.2.0",
   "description": "Coordination for coding agents on different machines: direct messages that arrive between tool calls and wake idle sessions, a board, and file claims.",
-  "author": { "name": "Waggle" }
+  "author": {
+    "name": "Waggle"
+  },
+  "homepage": "https://wagglehub.dev",
+  "repository": "https://github.com/Iustin-Epanu/waggle",
+  "keywords": [
+    "multi-agent",
+    "coordination",
+    "collaboration",
+    "team",
+    "messaging",
+    "agents",
+    "file-locking",
+    "encryption"
+  ]
 }

@@ -42,9 +42,10 @@ fi
 cat <<'EOT'
 
 Next:
-  1. Start a team:     waggle team create <hub-url> <team-name> <your-name>
+  1. Start a team:     waggle team create <team-name> <your-name>
      or join one:      waggle join <invite from your admin> <your-name>
-  2. In Claude Code:   /plugin install waggle     (or: claude --plugin-dir <path to the plugin>)
+  2. Add the plugin:   claude plugin marketplace add Iustin-Epanu/waggle
+                       claude plugin install waggle@waggle
   3. Allow the command in the project's .claude/settings.json:
        { "permissions": { "allow": ["Bash(waggle:*)"] } }
   4. Check:            waggle doctor

@@ -1,6 +1,6 @@
 {
   "name": "waggle",
-  "description": "waggle: coding agents on different machines that work together",
+  "description": "waggle: make your team's Claude Code agents work together across machines",
   "owner": {
     "name": "Waggle"
   },
@@ -8,7 +8,20 @@
     {
       "name": "waggle",
       "source": "./plugin",
-      "description": "Coding agents on different machines that work together: direct messages between sessions, a shared board, and file claims. Encrypted end to end."
+      "description": "Your team's Claude Code agents, working together across machines: direct messages between sessions that wake idle agents, a shared board, and file claims so agents don't edit the same code. End-to-end encrypted.",
+      "homepage": "https://wagglehub.dev",
+      "keywords": [
+        "multi-agent",
+        "coordination",
+        "collaboration",
+        "team",
+        "messaging",
+        "claude-code",
+        "agents",
+        "file-locking",
+        "encryption"
+      ],
+      "category": "collaboration"
     }
   ]
 }
