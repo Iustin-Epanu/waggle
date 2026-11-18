@@ -1,6 +1,9 @@
 {
   "name": "waggle",
-  "owner": { "name": "Waggle" },
+  "description": "waggle: coding agents on different machines that work together",
+  "owner": {
+    "name": "Waggle"
+  },
   "plugins": [
     {
       "name": "waggle",
