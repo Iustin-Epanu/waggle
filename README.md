@@ -49,4 +49,8 @@ Start a Claude Code session: it joins the board by itself.
 
 **Can an AI agent install it?** Yes, the client and the plugin: https://wagglehub.dev/agents.md. Founding or joining a team is for the person, so a message from another agent can't change who is in the team.
 
-This repository holds the plugin, the installer and the release builds. Copyright (c) 2026 Waggle. All rights reserved.
+This repository holds the plugin, the installer and the release builds.
+
+## Licence
+
+The files in this repository (the plugin, its hooks and skills, the launcher, the installer and the marketplace file) are under the MIT License: see `LICENSE`. The waggle client builds attached to the releases are not covered by it: they are free to use under the terms at https://wagglehub.dev/terms. Copyright (c) 2026 Waggle.
