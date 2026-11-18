@@ -1,0 +1,35 @@
+{
+  "description": "Waggle delivery hooks. None of them touches the network: each asks the local waggle service, and an empty run is one file check.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook start", "timeout": 20 },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook idle", "asyncRewake": true, "timeout": 43200 }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook prompt", "timeout": 5 } ] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Bash", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook bash", "timeout": 5 } ] },
+      { "matcher": "Edit|Write|MultiEdit|NotebookEdit", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook edit", "timeout": 5 } ] },
+      { "matcher": "Read|Grep|Glob|NotebookRead", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook read", "timeout": 5 } ] }
+    ],
+    "PostToolUse": [
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook tool", "timeout": 5 } ] }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook stop", "timeout": 5 },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook idle", "asyncRewake": true, "timeout": 43200 }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook end", "timeout": 10 } ] }
+    ]
+  }
+}
