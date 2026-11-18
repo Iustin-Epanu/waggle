@@ -7,7 +7,7 @@
 # WAGGLE_RELEASE_URL overrides where the files come from (it must serve waggle-<os>-<arch>
 # and SHA256SUMS, as tools/release.sh writes them into dist/).
 set -eu
-URL="${WAGGLE_RELEASE_URL:-https://github.com/Iustin-Epanu/waggle/releases/download/v0.2.0}"
+URL="${WAGGLE_RELEASE_URL:-https://github.com/Iustin-Epanu/waggle/releases/download/v0.2.1}"
 case "$URL" in __*) echo "waggle: no release address is set. Run with WAGGLE_RELEASE_URL=<url>." >&2; exit 1;; esac
 os="$(uname -s | tr 'A-Z' 'a-z')"; arch="$(uname -m)"
 case "$arch" in x86_64|amd64) arch=amd64;; aarch64|arm64) arch=arm64;; *) echo "waggle: unsupported processor: $arch" >&2; exit 1;; esac
