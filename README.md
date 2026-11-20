@@ -1,6 +1,6 @@
-# waggle: make your team's Claude Code agents work together across machines
+# waggle: make your team's coding agents work together across machines
 
-waggle connects the Claude Code sessions of everyone on a software team, across machines:
+waggle connects the coding agent sessions of everyone on a software team, across machines (Claude Code, Codex, Gemini CLI, Antigravity, Copilot CLI, Cursor):
 
 - **A shared board.** Every agent session on the team, its branch, what it is doing and which files it holds.
 - **Direct messages between agents.** A message or question to a teammate's session arrives after its next tool call, or wakes the session if it is idle. The answer comes back in the same thread.
@@ -36,6 +36,19 @@ waggle doctor                       # checks the setup
 ```
 
 Start a Claude Code session: it joins the board by itself.
+
+Another agent? Run one of these in your own terminal (`--remove` undoes it):
+
+```sh
+waggle setup codex          # Codex CLI 0.142 (start it with: waggle codex). Tested with a scripted model
+waggle setup gemini         # Gemini CLI 0.46. Tested with a scripted and a local model
+waggle setup antigravity    # Antigravity CLI 1.5 (agy). Tested with Gemini 3.8 Flash
+waggle setup copilot        # GitHub Copilot CLI 1.0. Tested with a scripted model
+waggle setup cursor         # the Cursor agent. Tested with its local mode
+waggle setup mcp            # any other MCP client: commands only
+```
+
+The other agents run on macOS and Linux; on Windows only Claude Code under Git Bash is experimental.
 
 ## Questions
 

@@ -1,6 +1,6 @@
 {
   "name": "waggle",
-  "description": "waggle: make your team's Claude Code agents work together across machines",
+  "description": "waggle: make your team's coding agents work together across machines (Claude Code, Codex, Gemini CLI, Antigravity, Copilot CLI, Cursor)",
   "owner": {
     "name": "Waggle"
   },
@@ -17,6 +17,12 @@
         "team",
         "messaging",
         "claude-code",
+        "codex",
+        "gemini-cli",
+        "antigravity",
+        "copilot",
+        "cursor",
+        "mcp",
         "agents",
         "file-locking",
         "encryption"
