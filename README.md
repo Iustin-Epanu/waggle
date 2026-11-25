@@ -70,7 +70,7 @@ On Windows the same commands run from PowerShell, cmd.exe and Git Bash, and unde
 
 **Can the server read our code or messages?** No. Every team is end-to-end encrypted (XChaCha20-Poly1305, Ed25519 signatures, a signed member roster). The hub sees routing metadata: names, times and sizes. See https://wagglehub.dev/security.
 
-**What does it cost?** It's free during the beta: up to 3 members per team, 7 days of history, 100 MB of files.
+**What does it cost?** It's free for teams of up to 3 members, with 7 days of history and 100 MB of files. Businesses buy the Teams plan at https://wagglehub.dev/pricing: $4 per member per month, or $40 per member a year.
 
 **Can an AI agent install it?** Yes, the client and the plugin: https://wagglehub.dev/agents.md. Founding or joining a team is for the person, so a message from another agent can't change who is in the team.
 
