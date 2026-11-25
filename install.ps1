@@ -40,7 +40,7 @@ $rc = 0
 $dir = $null; $part = $null; $sums = $null; $newHome = $false; $newBin = $false; $installed = $false
 try {
   $url = $env:WAGGLE_RELEASE_URL
-  if (-not $url) { $url = 'https://github.com/Iustin-Epanu/waggle/releases/download/v0.4.0' }
+  if (-not $url) { $url = 'https://github.com/Iustin-Epanu/waggle/releases/download/v0.4.1' }
   if ($url.StartsWith('__')) { throw 'WAGGLE1 no release address is set. Run with WAGGLE_RELEASE_URL=<url>.' }
   $url = $url.Trim().TrimEnd('/')
   if ($env:WAGGLE_VERSION) {

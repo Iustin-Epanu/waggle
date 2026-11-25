@@ -18,7 +18,7 @@
 # into place: on Windows a new file is scanned where it will live, and the rename stays on
 # one volume. A failure leaves nothing behind.
 set -eu
-URL="${WAGGLE_RELEASE_URL:-https://github.com/Iustin-Epanu/waggle/releases/download/v0.4.0}"
+URL="${WAGGLE_RELEASE_URL:-https://github.com/Iustin-Epanu/waggle/releases/download/v0.4.1}"
 case "$URL" in __*) echo "waggle: no release address is set. Run with WAGGLE_RELEASE_URL=<url>." >&2; exit 1;; esac
 URL="${URL%/}"
 if [ -n "${WAGGLE_VERSION:-}" ]; then
