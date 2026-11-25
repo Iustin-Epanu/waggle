@@ -1,0 +1,19 @@
+# Line endings of the public waggle repository (WIN-3). Claude Code on Windows clones this
+# repository with Git for Windows, which sets core.autocrlf=true: without this file the plugin
+# launcher bin/waggle, a POSIX sh script, is written with CRLF and WSL cannot run it
+# ("#!/bin/sh" plus a carriage return: "required file not found"). tools/publish.sh in the
+# source repository copies this file to the root of the public one and checks it is there.
+*                       text=auto eol=lf
+plugin/bin/waggle       text eol=lf
+plugin/bin/SHA256SUMS   text eol=lf
+plugin/bin/RELEASE_URL  text eol=lf
+install.sh              text eol=lf
+*.sh                    text eol=lf
+*.json                  text eol=lf
+*.md                    text eol=lf
+*.cmd                   text eol=crlf
+*.bat                   text eol=crlf
+*.ps1                   text eol=crlf
+plugin/bin/waggle.cmd   text eol=lf
+*.png                   binary
+*.exe                   binary

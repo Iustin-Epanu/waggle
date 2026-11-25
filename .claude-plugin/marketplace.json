@@ -10,6 +10,7 @@
       "source": "./plugin",
       "description": "Your team's Claude Code agents, working together across machines: direct messages between sessions that wake idle agents, a shared board, and file claims so agents don't edit the same code. End-to-end encrypted.",
       "homepage": "https://wagglehub.dev",
+      "license": "LicenseRef-Waggle-Proprietary",
       "keywords": [
         "multi-agent",
         "coordination",

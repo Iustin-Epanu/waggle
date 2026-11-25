@@ -1,35 +1,35 @@
 {
-  "description": "Waggle delivery hooks. None of them touches the network: each asks the local waggle service, and an empty run is one file check.",
+  "description": "Waggle delivery hooks. None of them touches the network: each asks the local waggle service, and an empty run is one file check. Each line runs in sh, Git Bash and PowerShell alike (bin/waggle.cmd: sourced by sh, run as a batch file by PowerShell). Proprietary software, (c) 2026 Waggle: see LICENSE (no reverse engineering, decompiling or derived clones).",
   "hooks": {
     "SessionStart": [
       {
         "hooks": [
-          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook start", "timeout": 20 },
-          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook idle", "asyncRewake": true, "timeout": 43200 }
+          { "type": "command", "command": "set -- hook start; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook start; exit $LASTEXITCODE", "timeout": 20 },
+          { "type": "command", "command": "set -- hook idle; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook idle; exit $LASTEXITCODE", "asyncRewake": true, "timeout": 43200 }
         ]
       }
     ],
     "UserPromptSubmit": [
-      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook prompt", "timeout": 5 } ] }
+      { "hooks": [ { "type": "command", "command": "set -- hook prompt; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook prompt; exit $LASTEXITCODE", "timeout": 5 } ] }
     ],
     "PreToolUse": [
-      { "matcher": "Bash", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook bash", "timeout": 5 } ] },
-      { "matcher": "Edit|Write|MultiEdit|NotebookEdit", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook edit", "timeout": 5 } ] },
-      { "matcher": "Read|Grep|Glob|NotebookRead", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook read", "timeout": 5 } ] }
+      { "matcher": "Bash", "hooks": [ { "type": "command", "command": "set -- hook bash; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook bash; exit $LASTEXITCODE", "timeout": 5 } ] },
+      { "matcher": "Edit|Write|MultiEdit|NotebookEdit", "hooks": [ { "type": "command", "command": "set -- hook edit; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook edit; exit $LASTEXITCODE", "timeout": 5 } ] },
+      { "matcher": "Read|Grep|Glob|NotebookRead", "hooks": [ { "type": "command", "command": "set -- hook read; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook read; exit $LASTEXITCODE", "timeout": 5 } ] }
     ],
     "PostToolUse": [
-      { "matcher": "*", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook tool", "timeout": 5 } ] }
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "set -- hook tool; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook tool; exit $LASTEXITCODE", "timeout": 5 } ] }
     ],
     "Stop": [
       {
         "hooks": [
-          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook stop", "timeout": 5 },
-          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook idle", "asyncRewake": true, "timeout": 43200 }
+          { "type": "command", "command": "set -- hook stop; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook stop; exit $LASTEXITCODE", "timeout": 5 },
+          { "type": "command", "command": "set -- hook idle; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook idle; exit $LASTEXITCODE", "asyncRewake": true, "timeout": 43200 }
         ]
       }
     ],
     "SessionEnd": [
-      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/bin/waggle hook end", "timeout": 10 } ] }
+      { "hooks": [ { "type": "command", "command": "set -- hook end; . \"${CLAUDE_PLUGIN_ROOT}/bin/waggle.cmd\" hook end; exit $LASTEXITCODE", "timeout": 10 } ] }
     ]
   }
 }
